@@ -23,8 +23,8 @@ class PostsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
+        viewModel.fetchData()
+    }    
 }
 
 extension PostsViewController: PostsViewModelProtocol {

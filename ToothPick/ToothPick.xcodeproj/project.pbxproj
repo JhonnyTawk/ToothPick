@@ -57,8 +57,8 @@
 				B74B919D298DAB6400259FA9 /* PostsViewController.swift */,
 				B74B91A7298DBECE00259FA9 /* PostsViewController.xib */,
 				B74B91A1298DB2F700259FA9 /* PostsViewModel.swift */,
-				B74B919F298DAD3700259FA9 /* PostsModel.swift */,
 				B74B91A9298DC83D00259FA9 /* PostsServices.swift */,
+				B74B919F298DAD3700259FA9 /* PostsModel.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";

@@ -18,7 +18,8 @@ class Coordinator {
 
     func start() {
         let networkService = NetworkService()
-        let viewModel = PostsViewModel(networkService: networkService)
+        let service = PostsServices(networkService: networkService)
+        let viewModel = PostsViewModel(service: service)
         let viewController = PostsViewController(viewModel: viewModel)
         viewModel.delegate = viewController
         navigationController.setViewControllers([viewController], animated: false)

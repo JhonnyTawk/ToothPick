@@ -15,28 +15,29 @@ protocol PostsViewModelProtocol: AnyObject {
 class PostsViewModel {
    
     weak var delegate: PostsViewModelProtocol?
-    let networkService: NetworkService
+    let service: PostsServices
     
-    init(networkService: NetworkService) {
-        self.networkService = networkService
+//    init(networkService: NetworkService) {
+//        self.networkService = networkService
+//    }
+    
+    init(service: PostsServices) {
+        self.service = service
     }
     
-    private func getPostsService() async -> Result<[PostsModel], RequestError> {
-        return await networkService.fetchData(endpoint: PostsEndpoint.getPosts,
-                                              responseModel: [PostsModel].self)
-    }
-    
-    private func fetchPosts() async {
-        let result = await getPostsService()
-        switch result {
-        case .success(let posts):
-            // handle success
-            delegate?.handleData()
-            break
-        case .failure(let error):
-            // handle failure
-            delegate?.handleError()
-            break
-        }
-    }
+     func fetchData() {
+         Task(priority: .background) {
+             let result = await service.getPosts()
+             switch result {
+             case .success(let posts):
+                 print(posts)
+                 delegate?.handleData()
+                 break
+             case .failure(let error):
+                 print(error)
+                 delegate?.handleError()
+                 break
+             }
+         }
+       }
 }

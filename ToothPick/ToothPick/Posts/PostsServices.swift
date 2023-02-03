@@ -1,20 +1,26 @@
-////
-////  PostsServices.swift
-////  ToothPick
-////
-////  Created by Jhonny on 2/4/23.
-////
 //
-//import Foundation
+//  PostsServices.swift
+//  ToothPick
 //
-//protocol PostsServiceable {
-//    func getPosts() async -> Result<[PostsModel], RequestError>
-//}
+//  Created by Jhonny on 2/4/23.
 //
-//struct PostsServices: NetworkServiceProtocol, PostsServiceable {
-//
-//    func getPosts() async -> Result<[PostsModel], RequestError> {
-//        return await fetchData(endpoint: PostsEndpoint.getPosts,
-//                               responseModel: [PostsModel].self)
-//    }
-//}
+
+import Foundation
+
+protocol PostsServiceable {
+    func getPosts() async -> Result<[PostsModel], RequestError>
+}
+
+struct PostsServices: PostsServiceable {
+
+    let networkService: NetworkService
+    
+    init(networkService: NetworkService) {
+        self.networkService = networkService
+    }
+    
+    func getPosts() async -> Result<[PostsModel], RequestError> {
+        return await networkService.fetchData(endpoint: PostsEndpoint.getPosts,
+                               responseModel: [PostsModel].self)
+    }
+}
