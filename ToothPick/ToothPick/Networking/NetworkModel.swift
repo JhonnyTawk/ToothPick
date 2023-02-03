@@ -16,6 +16,8 @@ protocol Endpoint {
 enum RequestError: Error {
     case decode
     case invalidURL
+    case errorFailure
+    case noResponse
     
     var customMessage: String {
         switch self {
@@ -23,6 +25,7 @@ enum RequestError: Error {
             return "Decode error"
         case .invalidURL:
             return "invalidURL"
+        default: return "Error"
         }
     }
 }

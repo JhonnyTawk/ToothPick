@@ -10,11 +10,10 @@ import Foundation
 protocol NetworkServiceProtocol {
 //    func fetchData(from url: URL, completion: @escaping (Result<Data, Error>) -> Void)
     func fetchData<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestError>
-
 }
 
 //The HTTPNetworkService is defined as a struct because it does not need to inherit from any class and does not have any reference type properties
-struct HTTPNetworkService: NetworkServiceProtocol {
+struct NetworkService: NetworkServiceProtocol {
    
     func fetchData<T : Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestError> {
         guard let url = URL(string: endpoint.path) else {
@@ -42,10 +41,10 @@ struct HTTPNetworkService: NetworkServiceProtocol {
                 }
                 return .success(decodedResponse)
             default:
-                return .failure(.invalidURL)
+                return .failure(.errorFailure)
             }
         } catch {
-            return .failure(.invalidURL)
+            return .failure(.noResponse)
         }
     }
     
