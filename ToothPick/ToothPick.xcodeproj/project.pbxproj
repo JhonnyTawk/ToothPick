@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B74B919E298DAB6500259FA9 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B919D298DAB6400259FA9 /* PostsViewController.swift */; };
+		B74B91A0298DAD3700259FA9 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B919F298DAD3700259FA9 /* PostsModel.swift */; };
 		B77CFE39298C13AC00E85105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE38298C13AC00E85105 /* AppDelegate.swift */; };
 		B77CFE3B298C13AC00E85105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE3A298C13AC00E85105 /* SceneDelegate.swift */; };
 		B77CFE40298C13AC00E85105 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77CFE3E298C13AC00E85105 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		B74B919D298DAB6400259FA9 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		B74B919F298DAD3700259FA9 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		B77CFE35298C13AC00E85105 /* ToothPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToothPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77CFE38298C13AC00E85105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B77CFE3A298C13AC00E85105 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				B74B919D298DAB6400259FA9 /* PostsViewController.swift */,
+				B74B919F298DAD3700259FA9 /* PostsModel.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				B77CFE4E298DA08C00E85105 /* NetworkService.swift in Sources */,
 				B77CFE3B298C13AC00E85105 /* SceneDelegate.swift in Sources */,
 				B74B919E298DAB6500259FA9 /* PostsViewController.swift in Sources */,
+				B74B91A0298DAD3700259FA9 /* PostsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
