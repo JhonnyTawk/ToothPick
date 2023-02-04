@@ -43,6 +43,15 @@ class PostsViewModel {
              }
          }
      }
+    
+    func getIndex(of id: Int) -> Int {
+        guard let index = posts.firstIndex(where: {$0.id == id}) else {
+            assertionFailure("Unable to delete")
+            return 0
+        }
+        return index
+    }
+    
     func handleSuccessData(postsData: [PostsModel]) {
         self.posts = postsData // for caching
         delegate?.handleData()

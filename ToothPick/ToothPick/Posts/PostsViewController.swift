@@ -68,11 +68,8 @@ extension PostsViewController: PostsDataSourceDelegate {
     func handleEdit(_ id: Int) {
         
 //        let item = viewModel.posts.first(where: {$0.id == id})
-        guard let index = viewModel.posts.firstIndex(where: {$0.id == id}) else {
-            assertionFailure("Unable to edit")
-            return
-        }
-        let item = viewModel.posts[index]
+       
+        let item = viewModel.posts[viewModel.getIndex(of: id)]
         // we can use same model as we will not alter the userId/id or we can create a new one
         BottomSheetHelper.editPost(viewController: self, post: PostsModel(userId: item.userId,
                                                                           id: item.id,
@@ -81,7 +78,7 @@ extension PostsViewController: PostsDataSourceDelegate {
                                    type: .edit) { post in
             
             //done
-            self.updateModel(at: index,
+            self.updateModel(at: self.viewModel.getIndex(of: id),
                              newPost: post)
         }
     }
@@ -90,11 +87,8 @@ extension PostsViewController: PostsDataSourceDelegate {
         let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { action in
             //Handle Delete
-            guard let index = self.viewModel.posts.firstIndex(where: {$0.id == id}) else {
-                assertionFailure("Unable to delete")
-                return
-            }
-            self.viewModel.posts.remove(at: index)
+           
+            self.viewModel.posts.remove(at: self.viewModel.getIndex(of: id))
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .default))
