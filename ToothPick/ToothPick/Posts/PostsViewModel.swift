@@ -17,10 +17,13 @@ class PostsViewModel {
     weak var delegate: PostsViewModelProtocol?
     let service: PostsServiceable
     
-    var posts = [PostsModel]()
-//    init(networkService: NetworkService) {
-//        self.networkService = networkService
-//    }
+    var posts: [PostsModel] = [] {
+        didSet {
+            self.updateUI?()
+        }
+    }
+    
+    var updateUI: (() -> Void)?
     
     init(service: PostsServiceable) {
         self.service = service
@@ -41,7 +44,6 @@ class PostsViewModel {
          }
      }
     func handleSuccessData(postsData: [PostsModel]) {
-        print(posts)
         self.posts = postsData // for caching
         delegate?.handleData()
     }

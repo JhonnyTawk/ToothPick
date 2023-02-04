@@ -37,23 +37,28 @@ class PostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchData()
-    }    
+        bindToViewModel()
+    }
+    
+    func bindToViewModel() {
+        self.viewModel.updateUI = { [weak self] in
+            self?.handleData()
+        }
+    }
 }
 
 extension PostsViewController: PostsViewModelProtocol {
   
     func handleData() {
-        print("handleData")
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
+        DispatchQueue.main.async {
             self.dataSource = PostsDataSource(delegate: self,
-                                         posts: self.viewModel.posts)
+                                              posts: self.viewModel.posts)
             self.tableView.delegate = self.dataSource
             self.tableView.dataSource = self.dataSource
             self.tableView.reloadData()
+            self.tableView.reloadData()
         }
     }
-    
     func handleError() {
         print("handleError")
     }
@@ -61,25 +66,30 @@ extension PostsViewController: PostsViewModelProtocol {
 
 extension PostsViewController: PostsDataSourceDelegate {
     func handleEdit(_ id: Int) {
-        guard let item = viewModel.posts.first(where: {$0.id == id}) else {
+        
+//        let item = viewModel.posts.first(where: {$0.id == id})
+        guard let index = viewModel.posts.firstIndex(where: {$0.id == id}) else {
             assertionFailure("Unable to edit")
             return
         }
-        BottomSheetHelper.editPost(viewController: self, post: PostsModel(userId: 1,
-                                                                          id: 2,
+        let item = viewModel.posts[index]
+        // we can use same model as we will not alter the userId/id or we can create a new one
+        BottomSheetHelper.editPost(viewController: self, post: PostsModel(userId: item.userId,
+                                                                          id: item.id,
                                                                           title: item.title,
                                                                           body: item.body),
                                    type: .edit) { post in
             
             //done
-            print(post)
+            self.updateModel(at: index,
+                             newPost: post)
         }
     }
     
     func handleDelete(_ id: Int) {
-        print(id)
-        print(viewModel.posts.first(where: {$0.id == id})?.title)
     }
     
-    
+    func updateModel(at index: Int, newPost: PostsModel) {
+        viewModel.posts[index] = newPost
+    }
 }

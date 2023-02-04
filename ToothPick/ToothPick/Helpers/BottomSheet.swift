@@ -18,11 +18,11 @@ enum PostType {
     class func editPost(viewController: UIViewController,
                         post: PostsModel,
                         type: PostType,
-                        create : ((_ post: PostsModel)->())?) {
+                        alter : ((_ post: PostsModel)->())?) {
         guard let vc = controller(viewController: viewController, post:post, type: type) else { return }
-//        vc.onDateSelected = { (selectedData) in
-//            didSelectDate?(selectedData)
-//        }
+        vc.onAlterPost = { (post) in
+            alter?(post)
+        }
     }
 
     private class func controller(viewController: UIViewController,
@@ -45,6 +45,7 @@ class BottomSheet: UIViewController {
             titleField.autocapitalizationType = .none
             titleField.returnKeyType = .next
             titleField.text = post?.title
+            titleField.becomeFirstResponder()
         }
     }
     
@@ -110,7 +111,10 @@ class BottomSheet: UIViewController {
     func handlePostConfig() -> PostsModel {
         let title = titleField.text ?? ""
         let body = descField.text ?? ""
-        return PostsModel(userId: 0, id: 0, title: title, body: body)
+        return PostsModel(userId: post?.userId ?? 0,
+                          id: post?.id ?? 0,
+                          title: title,
+                          body: body)
     }
     @IBAction func onDoneButton(sender : UIButton) {
         //Check and pass the Values
