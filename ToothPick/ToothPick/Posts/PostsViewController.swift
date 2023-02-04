@@ -61,8 +61,19 @@ extension PostsViewController: PostsViewModelProtocol {
 
 extension PostsViewController: PostsDataSourceDelegate {
     func handleEdit(_ id: Int) {
-        print(id)
-        print(viewModel.posts.first(where: {$0.id == id})?.title)
+        guard let item = viewModel.posts.first(where: {$0.id == id}) else {
+            assertionFailure("Unable to edit")
+            return
+        }
+        BottomSheetHelper.editPost(viewController: self, post: PostsModel(userId: 1,
+                                                                          id: 2,
+                                                                          title: item.title,
+                                                                          body: item.body),
+                                   type: .edit) { post in
+            
+            //done
+            print(post)
+        }
     }
     
     func handleDelete(_ id: Int) {

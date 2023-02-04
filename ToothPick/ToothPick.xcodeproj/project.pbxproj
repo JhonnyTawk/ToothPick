@@ -17,6 +17,10 @@
 		B74B91AF298DD25500259FA9 /* PostsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74B91AE298DD25500259FA9 /* PostsCell.xib */; };
 		B74B91B2298DDDEE00259FA9 /* Extensions+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91B1298DDDEE00259FA9 /* Extensions+UIColor.swift */; };
 		B74B91B4298DE2B000259FA9 /* PostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91B3298DE2B000259FA9 /* PostsDataSource.swift */; };
+		B74B91BB298DF4EB00259FA9 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91BA298DF4EB00259FA9 /* BottomSheet.swift */; };
+		B74B91BD298DF59B00259FA9 /* BottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74B91BC298DF59B00259FA9 /* BottomSheet.xib */; };
+		B74B91BF298DF93000259FA9 /* Extensions+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91BE298DF93000259FA9 /* Extensions+UIButton.swift */; };
+		B74B91C1298DFBCD00259FA9 /* Extensions+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91C0298DFBCD00259FA9 /* Extensions+UITextField.swift */; };
 		B77CFE39298C13AC00E85105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE38298C13AC00E85105 /* AppDelegate.swift */; };
 		B77CFE3B298C13AC00E85105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE3A298C13AC00E85105 /* SceneDelegate.swift */; };
 		B77CFE40298C13AC00E85105 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77CFE3E298C13AC00E85105 /* Main.storyboard */; };
@@ -37,6 +41,10 @@
 		B74B91AE298DD25500259FA9 /* PostsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsCell.xib; sourceTree = "<group>"; };
 		B74B91B1298DDDEE00259FA9 /* Extensions+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIColor.swift"; sourceTree = "<group>"; };
 		B74B91B3298DE2B000259FA9 /* PostsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDataSource.swift; sourceTree = "<group>"; };
+		B74B91BA298DF4EB00259FA9 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		B74B91BC298DF59B00259FA9 /* BottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheet.xib; sourceTree = "<group>"; };
+		B74B91BE298DF93000259FA9 /* Extensions+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIButton.swift"; sourceTree = "<group>"; };
+		B74B91C0298DFBCD00259FA9 /* Extensions+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UITextField.swift"; sourceTree = "<group>"; };
 		B77CFE35298C13AC00E85105 /* ToothPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToothPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77CFE38298C13AC00E85105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B77CFE3A298C13AC00E85105 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				B74B91B1298DDDEE00259FA9 /* Extensions+UIColor.swift */,
+				B74B91BE298DF93000259FA9 /* Extensions+UIButton.swift */,
+				B74B91C0298DFBCD00259FA9 /* Extensions+UITextField.swift */,
+				B74B91BA298DF4EB00259FA9 /* BottomSheet.swift */,
+				B74B91BC298DF59B00259FA9 /* BottomSheet.xib */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -192,6 +204,7 @@
 			files = (
 				B74B91A8298DBECE00259FA9 /* PostsViewController.xib in Resources */,
 				B77CFE45298C13B000E85105 /* LaunchScreen.storyboard in Resources */,
+				B74B91BD298DF59B00259FA9 /* BottomSheet.xib in Resources */,
 				B77CFE42298C13B000E85105 /* Assets.xcassets in Resources */,
 				B77CFE40298C13AC00E85105 /* Main.storyboard in Resources */,
 				B74B91AF298DD25500259FA9 /* PostsCell.xib in Resources */,
@@ -206,7 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77CFE50298DA55200E85105 /* NetworkModel.swift in Sources */,
+				B74B91BF298DF93000259FA9 /* Extensions+UIButton.swift in Sources */,
 				B74B91AD298DD24F00259FA9 /* PostsCell.swift in Sources */,
+				B74B91C1298DFBCD00259FA9 /* Extensions+UITextField.swift in Sources */,
 				B77CFE39298C13AC00E85105 /* AppDelegate.swift in Sources */,
 				B77CFE4E298DA08C00E85105 /* NetworkService.swift in Sources */,
 				B77CFE3B298C13AC00E85105 /* SceneDelegate.swift in Sources */,
@@ -216,6 +231,7 @@
 				B74B91B4298DE2B000259FA9 /* PostsDataSource.swift in Sources */,
 				B74B91A4298DB7DA00259FA9 /* CoordinatorMock.swift in Sources */,
 				B74B91AA298DC83D00259FA9 /* PostsServices.swift in Sources */,
+				B74B91BB298DF4EB00259FA9 /* BottomSheet.swift in Sources */,
 				B74B91A2298DB2F700259FA9 /* PostsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
