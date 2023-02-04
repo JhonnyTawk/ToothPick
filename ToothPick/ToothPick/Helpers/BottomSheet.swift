@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AFViewShaker
 
 enum PostType {
     case edit
@@ -116,8 +117,28 @@ class BottomSheet: UIViewController {
                           title: title,
                           body: body)
     }
+    
+    private func handleShake<T: UIView>(view: T) {
+        let shaker = AFViewShaker(view: view)
+        shaker?.shake()
+    }
+    
+    func validateInputs() -> Bool {
+        guard !(titleField.text ?? "").isEmpty else {
+            handleShake(view: titleField)
+            return false
+        }
+        
+        guard !(descField.text ?? "").isEmpty else {
+            handleShake(view: descField)
+            return false
+        }
+        return true
+    }
+    
     @IBAction func onDoneButton(sender : UIButton) {
         //Check and pass the Values
+        if !validateInputs() { return }
         onAlterPost?(handlePostConfig())
         dismissVC()
     }

@@ -27,9 +27,13 @@
 		B77CFE45298C13B000E85105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77CFE43298C13B000E85105 /* LaunchScreen.storyboard */; };
 		B77CFE4E298DA08C00E85105 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE4D298DA08C00E85105 /* NetworkService.swift */; };
 		B77CFE50298DA55200E85105 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE4F298DA55200E85105 /* NetworkModel.swift */; };
+		BA801D6A823B1FB028B72DD7 /* Pods_ToothPick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F39DA47C594AFDD5418B677 /* Pods_ToothPick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F39DA47C594AFDD5418B677 /* Pods_ToothPick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToothPick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E5BD32ADA1BC4D268F50369 /* Pods-ToothPick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothPick.release.xcconfig"; path = "Target Support Files/Pods-ToothPick/Pods-ToothPick.release.xcconfig"; sourceTree = "<group>"; };
+		9270CA68D0D0520D18B97B7F /* Pods-ToothPick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToothPick.debug.xcconfig"; path = "Target Support Files/Pods-ToothPick/Pods-ToothPick.debug.xcconfig"; sourceTree = "<group>"; };
 		B74B919D298DAB6400259FA9 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		B74B919F298DAD3700259FA9 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		B74B91A1298DB2F700259FA9 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
@@ -59,12 +63,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA801D6A823B1FB028B72DD7 /* Pods_ToothPick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4ABA01B728FB08E9D810D77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9270CA68D0D0520D18B97B7F /* Pods-ToothPick.debug.xcconfig */,
+				6E5BD32ADA1BC4D268F50369 /* Pods-ToothPick.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AAFEBFF61D14E5F546FF5BBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F39DA47C594AFDD5418B677 /* Pods_ToothPick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B74B919C298DAB4100259FA9 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +127,8 @@
 			children = (
 				B77CFE37298C13AC00E85105 /* ToothPick */,
 				B77CFE36298C13AC00E85105 /* Products */,
+				A4ABA01B728FB08E9D810D77 /* Pods */,
+				AAFEBFF61D14E5F546FF5BBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B77CFE49298C13B000E85105 /* Build configuration list for PBXNativeTarget "ToothPick" */;
 			buildPhases = (
+				38004D8548FBF8DDECA35265 /* [CP] Check Pods Manifest.lock */,
 				B77CFE31298C13AC00E85105 /* Sources */,
 				B77CFE32298C13AC00E85105 /* Frameworks */,
 				B77CFE33298C13AC00E85105 /* Resources */,
+				0630EBF285238A1282FBA96B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,6 +236,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0630EBF285238A1282FBA96B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ToothPick/Pods-ToothPick-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ToothPick/Pods-ToothPick-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ToothPick/Pods-ToothPick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38004D8548FBF8DDECA35265 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ToothPick-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B77CFE31298C13AC00E85105 /* Sources */ = {
@@ -370,6 +439,7 @@
 		};
 		B77CFE4A298C13B000E85105 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9270CA68D0D0520D18B97B7F /* Pods-ToothPick.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -397,6 +467,7 @@
 		};
 		B77CFE4B298C13B000E85105 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E5BD32ADA1BC4D268F50369 /* Pods-ToothPick.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
