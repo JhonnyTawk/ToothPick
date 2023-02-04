@@ -76,4 +76,34 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.descLabel.text = viewModel.posts[indexPath.row].body
         return cell
     }
+    
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let edit = UIContextualAction(style: .normal,
+                                        title: nil) { [weak self] (action, view, completionHandler) in
+                                            self?.handleEdit()
+                                            completionHandler(true)
+        }
+        edit.backgroundColor = .redColor
+        edit.image = UIImage(named: "ic_edit")
+        
+        let config = UISwipeActionsConfiguration(actions: [edit])
+        //This will prevent the first action from running when someone does a full swipe.
+        config.performsFirstActionWithFullSwipe = false
+
+        return config
+
+    }
+    
+    // for iOS 11 and lower to deactivate the delete Action on swipe
+    func tableView(_ tableView: UITableView,
+                   editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func handleEdit() {
+        print("edit")
+    }
+
 }
