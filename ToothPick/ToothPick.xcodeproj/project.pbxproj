@@ -16,6 +16,7 @@
 		B74B91AD298DD24F00259FA9 /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91AC298DD24F00259FA9 /* PostsCell.swift */; };
 		B74B91AF298DD25500259FA9 /* PostsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74B91AE298DD25500259FA9 /* PostsCell.xib */; };
 		B74B91B2298DDDEE00259FA9 /* Extensions+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91B1298DDDEE00259FA9 /* Extensions+UIColor.swift */; };
+		B74B91B4298DE2B000259FA9 /* PostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91B3298DE2B000259FA9 /* PostsDataSource.swift */; };
 		B77CFE39298C13AC00E85105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE38298C13AC00E85105 /* AppDelegate.swift */; };
 		B77CFE3B298C13AC00E85105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE3A298C13AC00E85105 /* SceneDelegate.swift */; };
 		B77CFE40298C13AC00E85105 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77CFE3E298C13AC00E85105 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		B74B91AC298DD24F00259FA9 /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
 		B74B91AE298DD25500259FA9 /* PostsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsCell.xib; sourceTree = "<group>"; };
 		B74B91B1298DDDEE00259FA9 /* Extensions+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIColor.swift"; sourceTree = "<group>"; };
+		B74B91B3298DE2B000259FA9 /* PostsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDataSource.swift; sourceTree = "<group>"; };
 		B77CFE35298C13AC00E85105 /* ToothPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToothPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77CFE38298C13AC00E85105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B77CFE3A298C13AC00E85105 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				B74B91A1298DB2F700259FA9 /* PostsViewModel.swift */,
 				B74B91A9298DC83D00259FA9 /* PostsServices.swift */,
 				B74B919F298DAD3700259FA9 /* PostsModel.swift */,
+				B74B91B3298DE2B000259FA9 /* PostsDataSource.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				B74B919E298DAB6500259FA9 /* PostsViewController.swift in Sources */,
 				B74B91B2298DDDEE00259FA9 /* Extensions+UIColor.swift in Sources */,
 				B74B91A0298DAD3700259FA9 /* PostsModel.swift in Sources */,
+				B74B91B4298DE2B000259FA9 /* PostsDataSource.swift in Sources */,
 				B74B91A4298DB7DA00259FA9 /* CoordinatorMock.swift in Sources */,
 				B74B91AA298DC83D00259FA9 /* PostsServices.swift in Sources */,
 				B74B91A2298DB2F700259FA9 /* PostsViewModel.swift in Sources */,

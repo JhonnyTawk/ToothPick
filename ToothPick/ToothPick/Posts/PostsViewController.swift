@@ -14,8 +14,6 @@ class PostsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.translatesAutoresizingMaskIntoConstraints = false
-            tableView.delegate = self
-            tableView.dataSource = self
             tableView.separatorColor = .white
             tableView.separatorStyle = .singleLine
             tableView.tableFooterView = UIView()
@@ -25,7 +23,8 @@ class PostsViewController: UIViewController {
     
     //Private
     private let viewModel: PostsViewModel
-
+    private var dataSource: PostsDataSource?
+    
     init(viewModel: PostsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -45,7 +44,12 @@ extension PostsViewController: PostsViewModelProtocol {
   
     func handleData() {
         print("handleData")
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.dataSource = PostsDataSource(delegate: self,
+                                         posts: self.viewModel.posts)
+            self.tableView.delegate = self.dataSource
+            self.tableView.dataSource = self.dataSource
             self.tableView.reloadData()
         }
     }
@@ -55,55 +59,16 @@ extension PostsViewController: PostsViewModelProtocol {
     }
 }
 
-
-// MARK: - UITableViewDelegate, UITableViewDataSource
-extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+extension PostsViewController: PostsDataSourceDelegate {
+    func handleEdit(_ id: Int) {
+        print(id)
+        print(viewModel.posts.first(where: {$0.id == id})?.title)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.posts.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PostsCell.identifier, for: indexPath) as? PostsCell else {
-            return UITableViewCell()
-        }
-
-        cell.titleLabel.text = viewModel.posts[indexPath.row].title
-        cell.descLabel.text = viewModel.posts[indexPath.row].body
-        return cell
+    func handleDelete(_ id: Int) {
+        print(id)
+        print(viewModel.posts.first(where: {$0.id == id})?.title)
     }
     
-    func tableView(_ tableView: UITableView,
-                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let edit = UIContextualAction(style: .normal,
-                                        title: nil) { [weak self] (action, view, completionHandler) in
-                                            self?.handleEdit()
-                                            completionHandler(true)
-        }
-        edit.backgroundColor = .redColor
-        edit.image = UIImage(named: "ic_edit")
-        
-        let config = UISwipeActionsConfiguration(actions: [edit])
-        //This will prevent the first action from running when someone does a full swipe.
-        config.performsFirstActionWithFullSwipe = false
-
-        return config
-
-    }
     
-    // for iOS 11 and lower to deactivate the delete Action on swipe
-    func tableView(_ tableView: UITableView,
-                   editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
-    }
-    
-    func handleEdit() {
-        print("edit")
-    }
-
 }
