@@ -53,7 +53,7 @@ extension PostsDataSource: UITableViewDelegate, UITableViewDataSource {
         
         let delete = UIContextualAction(style: .normal,
                                       title: nil) { [weak self] (action, view, completionHandler) in
-          self?.delegate?.handleDelete(item.id)
+            self?.delegate?.handleDelete(item.id ?? 0)
           completionHandler(true)
       }
         delete.backgroundColor = .redColor
@@ -61,7 +61,7 @@ extension PostsDataSource: UITableViewDelegate, UITableViewDataSource {
         
         let edit = UIContextualAction(style: .normal,
                                       title: nil) { [weak self] (action, view, completionHandler) in
-            self?.delegate?.handleEdit(item.id)
+            self?.delegate?.handleEdit(item.id ?? 0)
             completionHandler(true)
       }
         edit.backgroundColor = .greenColor

@@ -36,7 +36,7 @@ class PostsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetchData()
+        viewModel.fetchPosts()
         bindToViewModel()
     }
     
@@ -67,8 +67,8 @@ extension PostsViewController: PostsViewModelProtocol {
 extension PostsViewController: PostsDataSourceDelegate {
     func handleEdit(_ id: Int) {
         
-//        let item = viewModel.posts.first(where: {$0.id == id})
-       
+        //        let item = viewModel.posts.first(where: {$0.id == id})
+        
         let item = viewModel.posts[viewModel.getIndex(of: id)]
         // we can use same model as we will not alter the userId/id or we can create a new one
         BottomSheetHelper.editPost(viewController: self, post: PostsModel(userId: item.userId,
@@ -78,24 +78,18 @@ extension PostsViewController: PostsDataSourceDelegate {
                                    type: .edit) { post in
             
             //done
-            self.updateModel(at: self.viewModel.getIndex(of: id),
-                             newPost: post)
+            self.viewModel.updatePost(post: post)
         }
     }
     
     func handleDelete(_ id: Int) {
         let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { action in
-            //Handle Delete
-           
-            self.viewModel.posts.remove(at: self.viewModel.getIndex(of: id))
+            //Call API First
+            self.viewModel.deletePost(id: id)
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .default))
         self.navigationController?.present(alert, animated: true)
-    }
-    
-    func updateModel(at index: Int, newPost: PostsModel) {
-        viewModel.posts[index] = newPost
     }
 }

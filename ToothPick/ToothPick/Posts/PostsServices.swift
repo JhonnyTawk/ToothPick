@@ -9,6 +9,8 @@ import Foundation
 
 protocol PostsServiceable {
     func getPosts() async -> Result<[PostsModel], RequestError>
+    func deletePost(id:Int) async -> Result<PostsModel, RequestError>
+    func updatePost(title: String, body: String, id: Int) async -> Result<PostsModel, RequestError>
 }
 
 struct PostsServices: PostsServiceable {
@@ -23,4 +25,14 @@ struct PostsServices: PostsServiceable {
         return await networkService.fetchData(endpoint: PostsEndpoint.getPosts,
                                responseModel: [PostsModel].self)
     }
+    
+    func deletePost(id:Int) async -> Result<PostsModel, RequestError> {
+        return await networkService.fetchData(endpoint: PostsEndpoint.deletePost(id: id),
+                               responseModel: PostsModel.self)
+    }
+    
+    func updatePost(title: String, body: String, id: Int) async -> Result<PostsModel, RequestError> {
+        return await networkService.fetchData(endpoint: PostsEndpoint.updatePost(id: id, body: body, title: title),responseModel: PostsModel.self)
+    }
+    
 }
