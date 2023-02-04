@@ -87,6 +87,18 @@ extension PostsViewController: PostsDataSourceDelegate {
     }
     
     func handleDelete(_ id: Int) {
+        let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { action in
+            //Handle Delete
+            guard let index = self.viewModel.posts.firstIndex(where: {$0.id == id}) else {
+                assertionFailure("Unable to delete")
+                return
+            }
+            self.viewModel.posts.remove(at: index)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default))
+        self.navigationController?.present(alert, animated: true)
     }
     
     func updateModel(at index: Int, newPost: PostsModel) {
