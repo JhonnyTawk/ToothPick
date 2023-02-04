@@ -51,23 +51,23 @@ extension PostsDataSource: UITableViewDelegate, UITableViewDataSource {
         
         let item = posts[indexPath.row]
         
-        let edit = UIContextualAction(style: .normal,
-                                      title: nil) { [weak self] (action, view, completionHandler) in
-          self?.delegate?.handleEdit(item.id)
-          completionHandler(true)
-      }
-        edit.backgroundColor = .redColor
-        edit.image = UIImage(named: "ic_edit")
-        
         let delete = UIContextualAction(style: .normal,
                                       title: nil) { [weak self] (action, view, completionHandler) in
-            self?.delegate?.handleDelete(item.id)
-            completionHandler(true)
+          self?.delegate?.handleDelete(item.id)
+          completionHandler(true)
       }
-        delete.backgroundColor = .greenColor
+        delete.backgroundColor = .redColor
         delete.image = UIImage(named: "ic_trash")
         
-        let config = UISwipeActionsConfiguration(actions: [edit, delete])
+        let edit = UIContextualAction(style: .normal,
+                                      title: nil) { [weak self] (action, view, completionHandler) in
+            self?.delegate?.handleEdit(item.id)
+            completionHandler(true)
+      }
+        edit.backgroundColor = .greenColor
+        edit.image = UIImage(named: "ic_edit")
+        
+        let config = UISwipeActionsConfiguration(actions: [delete, edit])
         //This will prevent the first action from running when someone does a full swipe.
         config.performsFirstActionWithFullSwipe = false
         return config
