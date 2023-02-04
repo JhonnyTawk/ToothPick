@@ -43,11 +43,11 @@
 		88825FD2E5725031A98A25310064B5A7 /* AFViewShaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFViewShaker.debug.xcconfig; sourceTree = "<group>"; };
 		9548AA0C427978B0843ACBCF1A749B93 /* AFViewShaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFViewShaker.release.xcconfig; sourceTree = "<group>"; };
 		96672C96ECEAAA3809FE5369A0B9F415 /* AFViewShaker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFViewShaker-prefix.pch"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BD6A7D4CBBFA3221EC645A31CD0A7C89 /* Pods-ToothPick-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ToothPick-umbrella.h"; sourceTree = "<group>"; };
 		BF809AEC912FD3AE73A3F9F329A6283F /* AFViewShaker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFViewShaker-dummy.m"; sourceTree = "<group>"; };
 		CD60CC67AF0D4F0B4698C26838654ACB /* Pods-ToothPick-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ToothPick-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D31F0DC9876BB528243092EE952821E2 /* AFViewShaker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFViewShaker; path = AFViewShaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31F0DC9876BB528243092EE952821E2 /* AFViewShaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFViewShaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B3BC031F2EF0AB220E54BD6985CED0 /* Pods-ToothPick-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ToothPick-acknowledgements.plist"; sourceTree = "<group>"; };
 		F8C75969B93F157EABD7A5EB171DF49E /* AFViewShaker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AFViewShaker-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,7 +79,6 @@
 				66A4D590D6CF27158559597FB272EE5E /* AFViewShaker.m */,
 				94970F31A26493D93B6D758D164272E6 /* Support Files */,
 			);
-			name = AFViewShaker;
 			path = AFViewShaker;
 			sourceTree = "<group>";
 		};
@@ -161,7 +160,7 @@
 		EE25D822B7C33AA20E8588A42CF1FF53 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D31F0DC9876BB528243092EE952821E2 /* AFViewShaker */,
+				D31F0DC9876BB528243092EE952821E2 /* AFViewShaker.framework */,
 				8181A9EDEC4EBB9AEBFF0193E0068948 /* Pods-ToothPick */,
 			);
 			name = Products;
@@ -205,7 +204,7 @@
 			);
 			name = AFViewShaker;
 			productName = AFViewShaker;
-			productReference = D31F0DC9876BB528243092EE952821E2 /* AFViewShaker */;
+			productReference = D31F0DC9876BB528243092EE952821E2 /* AFViewShaker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C38B187890F52EB7F868AA72C67D2ABE /* Pods-ToothPick */ = {
@@ -417,7 +416,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AFViewShaker/AFViewShaker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AFViewShaker/AFViewShaker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,7 +450,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AFViewShaker/AFViewShaker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AFViewShaker/AFViewShaker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

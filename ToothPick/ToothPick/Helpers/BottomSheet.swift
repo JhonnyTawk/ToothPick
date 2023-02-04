@@ -76,7 +76,7 @@ class BottomSheet: UIViewController {
     var PostType: PostType?
     
     var displayTxt: String {
-        PostType == .create ? "Create Post" : "Edit Post"
+        PostType == .create ? "Create" : "Edit Post"
     }
     //MARK:- Init
     init(post: PostsModel? = nil, type: PostType) {

@@ -42,6 +42,11 @@ class PostsViewController: UIViewController {
         bindToViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         floatingButton.layer.cornerRadius = floatingButton.frame.width / 2

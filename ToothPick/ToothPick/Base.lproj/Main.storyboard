@@ -66,14 +66,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hiP-QM-LbF">
-                                <rect key="frame" x="0.0" y="97" width="390" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <rect key="frame" x="0.0" y="112" width="390" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="rWT-uq-nrH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwo-Fk-9oh">
-                                <rect key="frame" x="0.0" y="98" width="390" height="85"/>
+                                <rect key="frame" x="0.0" y="128" width="390" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cME-Go-Dvc">
                                         <rect key="frame" x="15" y="15" width="360" height="25"/>
@@ -105,6 +105,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cME-Go-Dvc" secondAttribute="trailing" constant="15" id="HBr-9y-MFH"/>
+                                    <constraint firstItem="wNK-gf-DwS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pwo-Fk-9oh" secondAttribute="leading" constant="20" symbolic="YES" id="M3H-kf-NDC"/>
                                     <constraint firstItem="st0-2w-rsw" firstAttribute="leading" secondItem="pwo-Fk-9oh" secondAttribute="leading" constant="15" id="fia-i3-G7V"/>
                                     <constraint firstAttribute="bottom" secondItem="wNK-gf-DwS" secondAttribute="bottom" id="kbJ-Sz-4w5"/>
                                     <constraint firstItem="cME-Go-Dvc" firstAttribute="leading" secondItem="pwo-Fk-9oh" secondAttribute="leading" constant="15" id="nD1-tt-ihy"/>
@@ -125,8 +126,8 @@
                             <constraint firstItem="jUC-eV-4ah" firstAttribute="trailing" secondItem="Aaa-N6-UgI" secondAttribute="trailing" id="e0q-7O-Wpm"/>
                             <constraint firstItem="Aaa-N6-UgI" firstAttribute="top" secondItem="jUC-eV-4ah" secondAttribute="top" id="ikw-uU-ucD"/>
                             <constraint firstItem="Aaa-N6-UgI" firstAttribute="leading" secondItem="jUC-eV-4ah" secondAttribute="leading" id="miT-gu-DPA"/>
-                            <constraint firstItem="hiP-QM-LbF" firstAttribute="top" secondItem="Aaa-N6-UgI" secondAttribute="bottom" id="o46-nb-waL"/>
-                            <constraint firstItem="pwo-Fk-9oh" firstAttribute="top" secondItem="hiP-QM-LbF" secondAttribute="bottom" id="uHH-cT-fhx"/>
+                            <constraint firstItem="hiP-QM-LbF" firstAttribute="top" secondItem="Aaa-N6-UgI" secondAttribute="bottom" constant="15" id="o46-nb-waL"/>
+                            <constraint firstItem="pwo-Fk-9oh" firstAttribute="top" secondItem="hiP-QM-LbF" secondAttribute="bottom" constant="15" id="uHH-cT-fhx"/>
                             <constraint firstItem="jUC-eV-4ah" firstAttribute="trailing" secondItem="pwo-Fk-9oh" secondAttribute="trailing" id="zR1-gJ-Ysx"/>
                         </constraints>
                     </view>
@@ -149,8 +150,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

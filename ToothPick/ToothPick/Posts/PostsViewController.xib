@@ -21,8 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2XW-ae-Bh7">
-                    <rect key="frame" x="0.0" y="102" width="390" height="708"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2XW-ae-Bh7">
+                    <rect key="frame" x="0.0" y="90.666666666666686" width="390" height="719.33333333333326"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRa-my-y6M">
@@ -38,16 +38,24 @@
                         <action selector="createAction:" destination="-1" eventType="touchUpInside" id="89l-qu-zRu"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htk-GY-8mK">
+                    <rect key="frame" x="14.999999999999993" y="47" width="102.33333333333331" height="28.666666666666671"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Lhw-02-WdB"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="2XW-ae-Bh7" firstAttribute="top" secondItem="Lhw-02-WdB" secondAttribute="top" id="86s-1p-0Vo"/>
                 <constraint firstItem="Lhw-02-WdB" firstAttribute="trailing" secondItem="uRa-my-y6M" secondAttribute="trailing" constant="16" id="9eT-uv-ZYN"/>
                 <constraint firstItem="Lhw-02-WdB" firstAttribute="trailing" secondItem="2XW-ae-Bh7" secondAttribute="trailing" id="EUT-j4-pyb"/>
                 <constraint firstItem="Lhw-02-WdB" firstAttribute="bottom" secondItem="uRa-my-y6M" secondAttribute="bottom" constant="16" id="Jsa-WA-nqq"/>
                 <constraint firstItem="Lhw-02-WdB" firstAttribute="bottom" secondItem="2XW-ae-Bh7" secondAttribute="bottom" id="PXO-cU-iyP"/>
+                <constraint firstItem="2XW-ae-Bh7" firstAttribute="top" secondItem="Htk-GY-8mK" secondAttribute="bottom" constant="15" id="Vxf-XM-Fgy"/>
+                <constraint firstItem="Htk-GY-8mK" firstAttribute="leading" secondItem="Lhw-02-WdB" secondAttribute="leading" constant="15" id="bJ8-Gc-s0b"/>
                 <constraint firstItem="2XW-ae-Bh7" firstAttribute="leading" secondItem="Lhw-02-WdB" secondAttribute="leading" id="iHY-pJ-Vji"/>
+                <constraint firstItem="Htk-GY-8mK" firstAttribute="top" secondItem="Lhw-02-WdB" secondAttribute="top" id="jwT-lW-zh1"/>
             </constraints>
             <point key="canvasLocation" x="24.615384615384613" y="19.90521327014218"/>
         </view>

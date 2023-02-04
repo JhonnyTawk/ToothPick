@@ -37,6 +37,13 @@ class PostsDetailsViewController: UIViewController {
         descriptionLabel.text = post?.body
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.topItem?.title = "Post Details"
+        self.navigationController?.navigationBar.tintColor = .black
+    }
+    
     @IBAction func readMoreAction(_ sender: Any) {
         isExpanded = !isExpanded
     }
