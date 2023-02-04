@@ -12,7 +12,7 @@ protocol NetworkServiceProtocol {
     func fetchData<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestError>
 }
 
-//The HTTPNetworkService is defined as a struct because it does not need to inherit from any class and does not have any reference type properties
+//The NetworkService is defined as a struct because it does not need to inherit from any class and does not have any reference type properties
 struct NetworkService: NetworkServiceProtocol {
    
     func fetchData<T : Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestError> {
@@ -36,6 +36,7 @@ struct NetworkService: NetworkServiceProtocol {
             }
             print(response.statusCode)
             switch response.statusCode {
+                // Create posts API return 201, to handle all success cases ...
             case 200...299:
                 guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: data) else {
                     return .failure(.decode)

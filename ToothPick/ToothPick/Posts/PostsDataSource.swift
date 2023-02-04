@@ -8,12 +8,14 @@
 import Foundation
 import UIKit
 
+/// DataSource Actions
 protocol PostsDataSourceDelegate: AnyObject {
     func handleEdit(_ id: Int)
     func handleDelete(_ id: Int)
     func handleRowSelection(_ post: PostsModel)
 }
 
+/// Data Source class for TableView posts
 class PostsDataSource: NSObject {
     
     weak var delegate: PostsDataSourceDelegate?
@@ -52,6 +54,11 @@ extension PostsDataSource: UITableViewDelegate, UITableViewDataSource {
         delegate?.handleRowSelection(item)
     }
     
+    /// For swipping Native implementation
+    /// - Parameters:
+    ///   - tableView: tableView
+    ///   - indexPath: index
+    /// - Returns: Swipe Action
     func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         

@@ -22,6 +22,8 @@ class PostsDetailsViewController: UIViewController {
         }
     }
     
+    
+    /// DidSet Used to autoUpdate when value is changed
     var isExpanded: Bool = false {
         didSet {
             descriptionLabel.numberOfLines = isExpanded ? 0 : 2
