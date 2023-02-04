@@ -1,6 +1,14 @@
 # ToothPick
 This repo is for a technical assessment 
 
+#Important
+2 branches : main & Keyboard 
+
+Keyboard used for a real device in the create/Edit posts view that make sure the fields still appear when the keyboard is focused include also more updates 
+
+## Prefered to use the Keyboard Branch.
+- all commits are well documented.
+
 This project Focus on mock example of Coordinator, MVVM and data binding, protocols 
  
 - Data Source is a separate class for UITableView 
