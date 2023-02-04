@@ -12,6 +12,7 @@ struct PostsModel: Decodable {
     var id: Int?
     var title: String?
     var body: String?
+    var canEdit: Bool? = true
 }
 
 enum PostsEndpoint {

@@ -36,8 +36,11 @@ class PostsViewModel {
         posts[getIndex(of: newPost.id ?? 0)] = newPost
     }
     
+//    inout cannot be used in a BG thread Cannot pass immutable value as inout argument
     private func handlePostCreation(newPost: PostsModel) {
-        posts.insert(newPost, at: 0)
+        var post = newPost
+        post.canEdit = false
+        posts.insert(post, at: 0)
     }
     
     func getIndex(of id: Int) -> Int {

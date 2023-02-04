@@ -83,6 +83,7 @@ extension PostsViewController: PostsDataSourceDelegate {
     func handleEdit(_ id: Int) {
                 
         let item = viewModel.posts[viewModel.getIndex(of: id)]
+        if item.canEdit == false { return }
         // we can use same model as we will not alter the userId/id or we can create a new one
         BottomSheetHelper.alterPost(viewController: self, post: PostsModel(userId: item.userId,
                                                                           id: item.id,
