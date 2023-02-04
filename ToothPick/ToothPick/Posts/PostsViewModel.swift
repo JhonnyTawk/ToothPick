@@ -15,13 +15,14 @@ protocol PostsViewModelProtocol: AnyObject {
 class PostsViewModel {
    
     weak var delegate: PostsViewModelProtocol?
-    let service: PostsServices
+    let service: PostsServiceable
     
+    var posts = [PostsModel]()
 //    init(networkService: NetworkService) {
 //        self.networkService = networkService
 //    }
     
-    init(service: PostsServices) {
+    init(service: PostsServiceable) {
         self.service = service
     }
     
@@ -30,8 +31,7 @@ class PostsViewModel {
              let result = await service.getPosts()
              switch result {
              case .success(let posts):
-                 print(posts)
-                 delegate?.handleData()
+                 handleSuccessData(postsData: posts)
                  break
              case .failure(let error):
                  print(error)
@@ -39,5 +39,10 @@ class PostsViewModel {
                  break
              }
          }
-       }
+     }
+    func handleSuccessData(postsData: [PostsModel]) {
+        print(posts)
+        self.posts = postsData // for caching
+        delegate?.handleData()
+    }
 }

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostsViewController" customModule="ToothPick" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="2XW-ae-Bh7" id="GQS-4C-7N5"/>
                 <outlet property="view" destination="Kf0-w0-fkW" id="alT-oc-MWm"/>
             </connections>
         </placeholder>
@@ -17,12 +18,27 @@
         <view contentMode="scaleToFill" id="Kf0-w0-fkW">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2XW-ae-Bh7">
+                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="Lhw-02-WdB"/>
             <color key="backgroundColor" systemColor="systemRedColor"/>
+            <constraints>
+                <constraint firstItem="2XW-ae-Bh7" firstAttribute="top" secondItem="Lhw-02-WdB" secondAttribute="top" id="86s-1p-0Vo"/>
+                <constraint firstItem="Lhw-02-WdB" firstAttribute="trailing" secondItem="2XW-ae-Bh7" secondAttribute="trailing" id="EUT-j4-pyb"/>
+                <constraint firstItem="Lhw-02-WdB" firstAttribute="bottom" secondItem="2XW-ae-Bh7" secondAttribute="bottom" id="PXO-cU-iyP"/>
+                <constraint firstItem="2XW-ae-Bh7" firstAttribute="leading" secondItem="Lhw-02-WdB" secondAttribute="leading" id="iHY-pJ-Vji"/>
+            </constraints>
             <point key="canvasLocation" x="26" y="20"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

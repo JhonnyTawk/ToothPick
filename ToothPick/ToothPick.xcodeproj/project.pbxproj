@@ -13,6 +13,8 @@
 		B74B91A4298DB7DA00259FA9 /* CoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91A3298DB7DA00259FA9 /* CoordinatorMock.swift */; };
 		B74B91A8298DBECE00259FA9 /* PostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74B91A7298DBECE00259FA9 /* PostsViewController.xib */; };
 		B74B91AA298DC83D00259FA9 /* PostsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91A9298DC83D00259FA9 /* PostsServices.swift */; };
+		B74B91AD298DD24F00259FA9 /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B91AC298DD24F00259FA9 /* PostsCell.swift */; };
+		B74B91AF298DD25500259FA9 /* PostsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74B91AE298DD25500259FA9 /* PostsCell.xib */; };
 		B77CFE39298C13AC00E85105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE38298C13AC00E85105 /* AppDelegate.swift */; };
 		B77CFE3B298C13AC00E85105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE3A298C13AC00E85105 /* SceneDelegate.swift */; };
 		B77CFE40298C13AC00E85105 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77CFE3E298C13AC00E85105 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		B74B91A3298DB7DA00259FA9 /* CoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorMock.swift; sourceTree = "<group>"; };
 		B74B91A7298DBECE00259FA9 /* PostsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
 		B74B91A9298DC83D00259FA9 /* PostsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsServices.swift; sourceTree = "<group>"; };
+		B74B91AC298DD24F00259FA9 /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
+		B74B91AE298DD25500259FA9 /* PostsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsCell.xib; sourceTree = "<group>"; };
 		B77CFE35298C13AC00E85105 /* ToothPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToothPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77CFE38298C13AC00E85105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B77CFE3A298C13AC00E85105 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,13 +58,23 @@
 		B74B919C298DAB4100259FA9 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
-				B74B919D298DAB6400259FA9 /* PostsViewController.swift */,
+				B74B91AB298DD23F00259FA9 /* PostsCell */,
 				B74B91A7298DBECE00259FA9 /* PostsViewController.xib */,
+				B74B919D298DAB6400259FA9 /* PostsViewController.swift */,
 				B74B91A1298DB2F700259FA9 /* PostsViewModel.swift */,
 				B74B91A9298DC83D00259FA9 /* PostsServices.swift */,
 				B74B919F298DAD3700259FA9 /* PostsModel.swift */,
 			);
 			path = Posts;
+			sourceTree = "<group>";
+		};
+		B74B91AB298DD23F00259FA9 /* PostsCell */ = {
+			isa = PBXGroup;
+			children = (
+				B74B91AC298DD24F00259FA9 /* PostsCell.swift */,
+				B74B91AE298DD25500259FA9 /* PostsCell.xib */,
+			);
+			path = PostsCell;
 			sourceTree = "<group>";
 		};
 		B77CFE2C298C13AC00E85105 = {
@@ -166,6 +180,7 @@
 				B77CFE45298C13B000E85105 /* LaunchScreen.storyboard in Resources */,
 				B77CFE42298C13B000E85105 /* Assets.xcassets in Resources */,
 				B77CFE40298C13AC00E85105 /* Main.storyboard in Resources */,
+				B74B91AF298DD25500259FA9 /* PostsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77CFE50298DA55200E85105 /* NetworkModel.swift in Sources */,
+				B74B91AD298DD24F00259FA9 /* PostsCell.swift in Sources */,
 				B77CFE39298C13AC00E85105 /* AppDelegate.swift in Sources */,
 				B77CFE4E298DA08C00E85105 /* NetworkService.swift in Sources */,
 				B77CFE3B298C13AC00E85105 /* SceneDelegate.swift in Sources */,
