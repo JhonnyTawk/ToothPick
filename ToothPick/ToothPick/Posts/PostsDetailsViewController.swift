@@ -22,6 +22,13 @@ class PostsDetailsViewController: UIViewController {
         }
     }
     
+    var isExpanded: Bool = false {
+        didSet {
+            descriptionLabel.numberOfLines = isExpanded ? 0 : 2
+            readMoreButton.setTitle(isExpanded ? "Hide" : "Read More", for: .normal)
+        }
+    }
+    
     var post: PostsModel?
     
     override func viewDidLoad() {
@@ -31,6 +38,6 @@ class PostsDetailsViewController: UIViewController {
     }
     
     @IBAction func readMoreAction(_ sender: Any) {
-        descriptionLabel.numberOfLines = 0
+        isExpanded = !isExpanded
     }
 }
