@@ -17,7 +17,7 @@ struct PostsModel: Decodable {
 enum PostsEndpoint {
     case getPosts
     case getPost(id: Int)
-    case createPost(userId: Int, body: String, title: String)
+    case createPost(id: Int, body: String, title: String)
     case updatePost(id:Int, body: String, title: String)
     case deletePost(id:Int)
 }
@@ -44,14 +44,13 @@ extension PostsEndpoint: Endpoint {
         case .deletePost(_):
             return .delete
         }
-        
     }
     
     // This also can be done on the service level struct/class
     var body: [String : String]? {
         switch self {
         case .updatePost(let userId, let body, let title),
-                .createPost(let userId, let body, let title):
+             .createPost(let userId, let body, let title):
             return ["userId":"\(userId)",
                     "body": body,
                     "title": title]

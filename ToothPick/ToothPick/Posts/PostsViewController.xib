@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostsViewController" customModule="ToothPick" customModuleProvider="target">
             <connections>
+                <outlet property="floatingButton" destination="uRa-my-y6M" id="mMn-u5-jTd"/>
                 <outlet property="tableView" destination="2XW-ae-Bh7" id="GQS-4C-7N5"/>
                 <outlet property="view" destination="Kf0-w0-fkW" id="alT-oc-MWm"/>
             </connections>
@@ -23,12 +25,27 @@
                     <rect key="frame" x="0.0" y="102" width="390" height="708"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRa-my-y6M">
+                    <rect key="frame" x="316" y="736" width="58" height="58"/>
+                    <color key="backgroundColor" name="greenC"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="58" id="Tos-iN-n3I"/>
+                        <constraint firstAttribute="width" secondItem="uRa-my-y6M" secondAttribute="height" multiplier="1:1" id="wYU-72-TCg"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="ic_add"/>
+                    <connections>
+                        <action selector="createAction:" destination="-1" eventType="touchUpInside" id="89l-qu-zRu"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Lhw-02-WdB"/>
             <color key="backgroundColor" systemColor="systemRedColor"/>
             <constraints>
                 <constraint firstItem="2XW-ae-Bh7" firstAttribute="top" secondItem="Lhw-02-WdB" secondAttribute="top" id="86s-1p-0Vo"/>
+                <constraint firstItem="Lhw-02-WdB" firstAttribute="trailing" secondItem="uRa-my-y6M" secondAttribute="trailing" constant="16" id="9eT-uv-ZYN"/>
                 <constraint firstItem="Lhw-02-WdB" firstAttribute="trailing" secondItem="2XW-ae-Bh7" secondAttribute="trailing" id="EUT-j4-pyb"/>
+                <constraint firstItem="Lhw-02-WdB" firstAttribute="bottom" secondItem="uRa-my-y6M" secondAttribute="bottom" constant="16" id="Jsa-WA-nqq"/>
                 <constraint firstItem="Lhw-02-WdB" firstAttribute="bottom" secondItem="2XW-ae-Bh7" secondAttribute="bottom" id="PXO-cU-iyP"/>
                 <constraint firstItem="2XW-ae-Bh7" firstAttribute="leading" secondItem="Lhw-02-WdB" secondAttribute="leading" id="iHY-pJ-Vji"/>
             </constraints>
@@ -36,6 +53,10 @@
         </view>
     </objects>
     <resources>
+        <image name="ic_add" width="24" height="24"/>
+        <namedColor name="greenC">
+            <color red="0.29803921568627451" green="0.7686274509803922" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

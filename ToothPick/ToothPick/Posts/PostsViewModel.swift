@@ -36,6 +36,10 @@ class PostsViewModel {
         posts[getIndex(of: newPost.id ?? 0)] = newPost
     }
     
+    private func handlePostCreation(newPost: PostsModel) {
+        posts.insert(newPost, at: 0)
+    }
+    
     func getIndex(of id: Int) -> Int {
         guard let index = posts.firstIndex(where: {$0.id == id}) else {
             assertionFailure("Unable to delete")
@@ -90,6 +94,22 @@ extension PostsViewModel {
             switch result {
             case .success(_):
                 handlePostUpdate(newPost: post)
+                break
+            case .failure(_):
+                delegate?.handleError()
+                break
+            }
+        }
+    }
+    
+    func createPost(post: PostsModel) {
+        Task(priority: .background) {
+            let result = await service.createPost(title: post.title ?? "",
+                                                  body: post.body ?? "",
+                                                  id: post.id ?? 0)
+            switch result {
+            case .success(_):
+                handlePostCreation(newPost: post)
                 break
             case .failure(_):
                 delegate?.handleError()

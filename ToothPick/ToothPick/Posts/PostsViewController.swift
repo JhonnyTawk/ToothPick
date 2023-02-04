@@ -21,6 +21,8 @@ class PostsViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var floatingButton: UIButton!
+    
     //Private
     private let viewModel: PostsViewModel
     private var dataSource: PostsDataSource?
@@ -40,9 +42,22 @@ class PostsViewController: UIViewController {
         bindToViewModel()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        floatingButton.layer.cornerRadius = floatingButton.frame.width / 2
+    }
+    
     func bindToViewModel() {
         self.viewModel.updateUI = { [weak self] in
             self?.handleData()
+        }
+    }
+    
+    @IBAction func createAction(_ sender: Any) {
+        BottomSheetHelper.alterPost(viewController: self,
+                                   post: nil,
+                                   type: .create) { post in
+            self.viewModel.createPost(post: post)
         }
     }
 }
@@ -66,18 +81,14 @@ extension PostsViewController: PostsViewModelProtocol {
 
 extension PostsViewController: PostsDataSourceDelegate {
     func handleEdit(_ id: Int) {
-        
-        //        let item = viewModel.posts.first(where: {$0.id == id})
-        
+                
         let item = viewModel.posts[viewModel.getIndex(of: id)]
         // we can use same model as we will not alter the userId/id or we can create a new one
-        BottomSheetHelper.editPost(viewController: self, post: PostsModel(userId: item.userId,
+        BottomSheetHelper.alterPost(viewController: self, post: PostsModel(userId: item.userId,
                                                                           id: item.id,
                                                                           title: item.title,
                                                                           body: item.body),
                                    type: .edit) { post in
-            
-            //done
             self.viewModel.updatePost(post: post)
         }
     }
@@ -85,7 +96,6 @@ extension PostsViewController: PostsDataSourceDelegate {
     func handleDelete(_ id: Int) {
         let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { action in
-            //Call API First
             self.viewModel.deletePost(id: id)
         }))
         

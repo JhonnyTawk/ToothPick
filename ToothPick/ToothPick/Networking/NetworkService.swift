@@ -34,8 +34,9 @@ struct NetworkService: NetworkServiceProtocol {
             guard let response = response as? HTTPURLResponse else {
                 return .failure(.invalidURL)
             }
+            print(response.statusCode)
             switch response.statusCode {
-            case 200:
+            case 200...299:
                 guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: data) else {
                     return .failure(.decode)
                 }

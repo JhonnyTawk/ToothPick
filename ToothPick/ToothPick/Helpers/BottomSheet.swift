@@ -15,8 +15,8 @@ enum PostType {
 @objc open class BottomSheetHelper: NSObject {
 
     private static let shared = BottomSheetHelper()
-    class func editPost(viewController: UIViewController,
-                        post: PostsModel,
+    class func alterPost(viewController: UIViewController,
+                        post: PostsModel? = nil,
                         type: PostType,
                         alter : ((_ post: PostsModel)->())?) {
         guard let vc = controller(viewController: viewController, post:post, type: type) else { return }
@@ -26,7 +26,7 @@ enum PostType {
     }
 
     private class func controller(viewController: UIViewController,
-                                  post: PostsModel,
+                                  post: PostsModel? = nil,
                                   type: PostType) -> BottomSheet? {
         let dp = BottomSheet(post: post, type: type)
         dp.modalPresentationStyle = .overFullScreen
@@ -78,7 +78,7 @@ class BottomSheet: UIViewController {
         PostType == .create ? "Create Post" : "Edit Post"
     }
     //MARK:- Init
-    init(post: PostsModel, type: PostType) {
+    init(post: PostsModel? = nil, type: PostType) {
         super.init(nibName: nil, bundle: nil)
         self.post = post
         self.PostType = type
