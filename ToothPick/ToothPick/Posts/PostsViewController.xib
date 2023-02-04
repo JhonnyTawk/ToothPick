@@ -19,8 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2XW-ae-Bh7">
-                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2XW-ae-Bh7">
+                    <rect key="frame" x="0.0" y="102" width="390" height="708"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -32,7 +32,7 @@
                 <constraint firstItem="Lhw-02-WdB" firstAttribute="bottom" secondItem="2XW-ae-Bh7" secondAttribute="bottom" id="PXO-cU-iyP"/>
                 <constraint firstItem="2XW-ae-Bh7" firstAttribute="leading" secondItem="Lhw-02-WdB" secondAttribute="leading" id="iHY-pJ-Vji"/>
             </constraints>
-            <point key="canvasLocation" x="26" y="20"/>
+            <point key="canvasLocation" x="24.615384615384613" y="19.90521327014218"/>
         </view>
     </objects>
     <resources>
