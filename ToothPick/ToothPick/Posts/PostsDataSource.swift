@@ -11,6 +11,7 @@ import UIKit
 protocol PostsDataSourceDelegate: AnyObject {
     func handleEdit(_ id: Int)
     func handleDelete(_ id: Int)
+    func handleRowSelection(_ post: PostsModel)
 }
 
 class PostsDataSource: NSObject {
@@ -44,6 +45,11 @@ extension PostsDataSource: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = item.title
         cell.descLabel.text = item.body
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = posts[indexPath.row]
+        delegate?.handleRowSelection(item)
     }
     
     func tableView(_ tableView: UITableView,

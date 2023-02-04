@@ -103,4 +103,11 @@ extension PostsViewController: PostsDataSourceDelegate {
         alert.addAction(UIAlertAction(title: "Cancel", style: .default))
         self.navigationController?.present(alert, animated: true)
     }
+    
+    func handleRowSelection(_ post: PostsModel) {
+        let vc = UIStoryboard.init(name: "Main",
+                                   bundle: Bundle.main).instantiateViewController(withIdentifier: "PostsDetailsViewController") as? PostsDetailsViewController
+        vc?.post = post
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }

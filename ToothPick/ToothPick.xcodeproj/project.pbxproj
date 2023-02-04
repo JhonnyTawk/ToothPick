@@ -27,6 +27,7 @@
 		B77CFE45298C13B000E85105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77CFE43298C13B000E85105 /* LaunchScreen.storyboard */; };
 		B77CFE4E298DA08C00E85105 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE4D298DA08C00E85105 /* NetworkService.swift */; };
 		B77CFE50298DA55200E85105 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CFE4F298DA55200E85105 /* NetworkModel.swift */; };
+		B7C1B7C4298EA570003BCA9C /* PostsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1B7C3298EA570003BCA9C /* PostsDetailsViewController.swift */; };
 		BA801D6A823B1FB028B72DD7 /* Pods_ToothPick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F39DA47C594AFDD5418B677 /* Pods_ToothPick.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		B77CFE46298C13B000E85105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77CFE4D298DA08C00E85105 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B77CFE4F298DA55200E85105 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		B7C1B7C3298EA570003BCA9C /* PostsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,6 @@
 				9270CA68D0D0520D18B97B7F /* Pods-ToothPick.debug.xcconfig */,
 				6E5BD32ADA1BC4D268F50369 /* Pods-ToothPick.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -98,6 +99,7 @@
 				B74B91A9298DC83D00259FA9 /* PostsServices.swift */,
 				B74B919F298DAD3700259FA9 /* PostsModel.swift */,
 				B74B91B3298DE2B000259FA9 /* PostsDataSource.swift */,
+				B7C1B7C3298EA570003BCA9C /* PostsDetailsViewController.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -285,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77CFE50298DA55200E85105 /* NetworkModel.swift in Sources */,
+				B7C1B7C4298EA570003BCA9C /* PostsDetailsViewController.swift in Sources */,
 				B74B91BF298DF93000259FA9 /* Extensions+UIButton.swift in Sources */,
 				B74B91AD298DD24F00259FA9 /* PostsCell.swift in Sources */,
 				B77CFE39298C13AC00E85105 /* AppDelegate.swift in Sources */,
