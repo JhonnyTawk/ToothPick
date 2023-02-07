@@ -29,4 +29,4 @@ MVP pattern with dataStore can be used also instead of MVVM
 
 - Observable Object <Box> can be used instead of the implemented approach  
 
- [![Watch the video]( https://github.com/JhonnyTawk/ToothPick/blob/main/Simulator%20Screen%20Recording%20-%20iPhone%2014%20Pro%20-%202023-02-07%20at%2019.43.04.gif)
+ ![](https://github.com/JhonnyTawk/ToothPick/blob/main/Simulator%20Screen%20Recording%20-%20iPhone%2014%20Pro%20-%202023-02-07%20at%2019.43.04.gif)
